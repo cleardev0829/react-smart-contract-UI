@@ -1,278 +1,217 @@
-import { Icon } from "@iconify/react";
-import googleFill from "@iconify/icons-eva/google-fill";
-import twitterFill from "@iconify/icons-eva/twitter-fill";
-import facebookFill from "@iconify/icons-eva/facebook-fill";
-import linkedinFill from "@iconify/icons-eva/linkedin-fill";
-import instagramFilled from "@iconify/icons-ant-design/instagram-filled";
-import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink } from "react-router-dom";
+import { varFadeInUp, MotionInView } from "../../components/animate";
+import { useLocation } from "react-router-dom";
 // material
 import { experimentalStyled as styled } from "@material-ui/core/styles";
 import {
   Grid,
   Link,
-  Button,
-  Divider,
+  // Divider,
   Container,
   Typography,
-  IconButton,
   Stack,
-  TextField,
 } from "@material-ui/core";
-// routes
-import { PATH_PAGE } from "../../routes/paths";
-import { alpha, makeStyles } from "@material-ui/core/styles";
-//
-import Logo from "../../components/Logo";
+import { useTheme } from "@material-ui/core/styles";
 
-// ----------------------------------------------------------------------
-
-const SOCIALS = [
-  { name: "FaceBook", icon: facebookFill },
-  { name: "Google", icon: googleFill },
-  { name: "Linkedin", icon: linkedinFill },
-  { name: "Instagram", icon: instagramFilled },
-  { name: "Twitter", icon: twitterFill },
-];
-
-const LINKS = [
-  {
-    headline: "Home",
-    children: [
-      { name: "About us", href: PATH_PAGE.about },
-      { name: "Contact us", href: PATH_PAGE.contact },
-      // { name: 'FAQs', href: PATH_PAGE.faqs }
-    ],
-  },
-  {
-    headline: "Contact Us",
-    children: [
-      { name: "hello@irekommend.com", href: "#" },
-      {
-        name:
-          "6064 Cloverdale Dr Tega Cay South Carolina United States - 29708",
-        href: "#",
-      },
-    ],
-  },
-];
-
-const RootStyle = styled("div")(({ theme }) => ({
+const RootStyle = styled("div")(({ theme, bgColor }) => ({
   position: "relative",
-  backgroundColor: theme.palette.background.default,
+  backgroundColor: theme.palette.common[bgColor],
+  paddingBottom: theme.spacing(2),
 }));
-
-const useStylesEmailInput = makeStyles((theme) => ({
-  root: {
-    height: 50,
-    border: "1px solid #e2e2e1",
-    overflow: "hidden",
-    borderRadius: "10px 0 0 10px",
-    backgroundColor: "#fcfcfb",
-    transition: theme.transitions.create(["border-color", "box-shadow"]),
-    "&:hover": {
-      backgroundColor: "#fff",
-    },
-    "&$focused": {
-      backgroundColor: "#fff",
-      boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 2px`,
-      borderColor: theme.palette.primary.main,
-    },
-  },
-  focused: {},
-}));
-
-const useStyles = makeStyles((theme) => ({
-  button: {
-    height: 50,
-    maxWidth: 150,
-    width: "100%",
-    justifyContent: "flex-start",
-    borderRadius: "0 10px 10px 0",
-  },
-}));
-
-function EmailInput(props) {
-  const classes = useStylesEmailInput();
-
-  return (
-    <TextField
-      InputProps={{ classes, disableUnderline: true }}
-      sx={{ width: "100%", maxWidth: 400 }}
-      {...props}
-    />
-  );
-}
-
-// ----------------------------------------------------------------------
 
 export default function MainFooter() {
-  const classes = useStyles();
+  const theme = useTheme();
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
 
   return (
-    <RootStyle>
-      <Divider />
-      <Container maxWidth="lg" sx={{ pt: 10 }}>
-        <Grid
-          container
-          justifyContent={{ xs: "center", md: "space-between" }}
-          sx={{ textAlign: { xs: "center", md: "left" } }}
-        >
-          <Grid item xs={12}>
-            <Typography
-              variant="h4"
-              sx={{ textAlign: "center", fontWeight: 400 }}
-            >
-              Sign up to our newsletter
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Stack
-              direction="row"
-              justifyContent={{ xs: "center", md: "center" }}
-              sx={{ mt: 2, mb: { xs: 2, md: 0 } }}
-            >
-              <EmailInput
-                label="Enter your email"
-                variant="filled"
-                id="keyword-input"
-              />
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                className={classes.button}
+    <RootStyle bgColor={isHome ? "black" : "white"}>
+      {/* <Divider /> */}
+      <Container maxWidth="xlg" sx={{ pt: 10 }}>
+        {!isHome && pathname === "/nft" && (
+          <>
+            <MotionInView variants={varFadeInUp}>
+              <Typography
+                variant="h3"
+                sx={{
+                  fontFamily: (theme) =>
+                    `${theme.typography.headingFontFamily}`,
+                }}
+                color={isHome ? "white" : ""}
               >
-                Subscribe
-              </Button>
-            </Stack>
-          </Grid>
-          <Grid item xs={12} sx={{ mb: 3 }}>
-            <ScrollLink to="move_top" spy smooth>
-              <Logo sx={{ mx: { xs: "auto", md: "inherit" } }} />
-            </ScrollLink>
-          </Grid>
-          <Grid item xs={8} md={3}>
-            <Typography variant="body2" sx={{ pr: { md: 5 } }}>
-              We want to bring AI into the recruitment platform so that it can
-              simplify the task of jobseekers and recruiters
-            </Typography>
-          </Grid>
+                Supported by
+              </Typography>
+            </MotionInView>
 
-          <Grid item xs={12} md={6}>
-            <Stack
-              spacing={5}
-              direction={{ xs: "column", md: "row" }}
-              justifyContent="space-between"
+            <Grid
+              container
+              spacing={0}
+              justifyContent="center"
+              alignItems="flex-start"
             >
-              {LINKS.map((list) => {
-                const { headline, children } = list;
-                return (
-                  <Stack key={headline} spacing={2}>
-                    <Typography
-                      sx={{ mt: { xs: 2, md: 0 } }}
-                      component="p"
-                      variant="overline"
-                    >
-                      {headline}
-                    </Typography>
-                    {children.map((link) => (
-                      <Link
-                        // to={link.href}
-                        to={"/"}
-                        key={link.name}
-                        color="inherit"
-                        variant="body2"
-                        component={RouterLink}
-                        sx={{ display: "block" }}
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
-                  </Stack>
-                );
-              })}
-            </Stack>
-          </Grid>
-          <Grid item xs={12} md={2}>
+              <Grid item xs={12} md={8} dir="ltr" sx={{ px: 1 }}>
+                <MotionInView variants={varFadeInUp}>
+                  <img
+                    src="https://drive.google.com/uc?id=1CWGnnT6Fqf-DUcThnsGfrQuDoYq_yKZM"
+                    data-src="https://drive.google.com/uc?id=1CWGnnT6Fqf-DUcThnsGfrQuDoYq_yKZM"
+                    alt=""
+                  />
+                </MotionInView>
+              </Grid>
+            </Grid>
+          </>
+        )}
+
+        {pathname !== "/community" && (
+          <MotionInView variants={varFadeInUp}>
             <Typography
-              component="p"
-              variant="overline"
-              sx={{ textAlign: "center" }}
+              variant="h3"
+              sx={{
+                mb: 5,
+                fontFamily: (theme) => `${theme.typography.headingFontFamily}`,
+              }}
+              color={isHome ? "white" : ""}
             >
-              Follow US
+              Socials & Contact
             </Typography>
-            <Stack
-              spacing={1.5}
-              direction="row"
-              justifyContent={{ xs: "center", md: "center" }}
-              sx={{ mt: 5, mb: { xs: 5, md: 0 } }}
-            >
-              {SOCIALS.map((social) => (
-                <IconButton key={social.name} color="secondary" sx={{ p: 1 }}>
-                  <Icon icon={social.icon} width={16} height={16} />
-                </IconButton>
-              ))}
-            </Stack>
-          </Grid>
-        </Grid>
+          </MotionInView>
+        )}
+
         <Grid
           container
-          justifyContent={{ xs: "center", md: "space-between" }}
-          sx={{ textAlign: { xs: "center", md: "left" } }}
+          spacing={0}
+          justifyContent="center"
+          alignItems="flex-start"
         >
-          <Grid item xs={12}>
-            <Typography
-              component="p"
-              variant="body2"
-              sx={{
-                mt: 10,
-                fontSize: 13,
-                textAlign: { xs: "center", md: "center" },
-                color: "#AEAEAE",
-              }}
+          <Grid item xs={12} md={6} dir="ltr" sx={{ mb: 5 }}>
+            <Stack
+              direction="row"
+              spacing={{ lg: 30, md: 20, sm: 10 }}
+              justifyContent="space-around"
             >
-              IRekommend ©2021 ALL RIGHTS RESERVED.
-            </Typography>
+              <MotionInView variants={varFadeInUp}>
+                <Stack
+                  direction="column"
+                  alignItems="center"
+                  justifyContent="space-between"
+                >
+                  {pathname === "/community" && (
+                    <Typography variant="h6" sx={{ fontWeight: "normal" }}>
+                      Join our&nbsp;
+                      <span
+                        style={{
+                          textDecoration: "underline",
+                          cursor: "pointer",
+                          "&:hover": {
+                            color: theme.palette.GREEN,
+                          },
+                        }}
+                      >
+                        discord
+                      </span>
+                      &nbsp;to get involved.
+                    </Typography>
+                  )}
+                  <img
+                    src="https://drive.google.com/uc?id=1e91vFO2I802myn0Xo20Vi2xHQU0iWJ6q"
+                    data-src="https://drive.google.com/uc?id=1e91vFO2I802myn0Xo20Vi2xHQU0iWJ6q"
+                    alt=""
+                  />
+                  <Link
+                    target="_blank"
+                    href="https://discord.gg/xyKWH6gSKp"
+                    key="https://discord.gg/xyKWH6gSKp"
+                    color="inherit"
+                    variant="body2"
+                    sx={{ display: "block" }}
+                  >
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: "normal",
+                        textDecoration: "underline",
+                        "&:hover": {
+                          color: (theme) => theme.palette.GREEN,
+                        },
+                      }}
+                      color={isHome ? "white" : ""}
+                    >
+                      discord
+                    </Typography>
+                  </Link>
+                </Stack>
+              </MotionInView>
+
+              <MotionInView variants={varFadeInUp}>
+                <Stack
+                  direction="column"
+                  alignItems="center"
+                  justifyContent="space-between"
+                >
+                  {pathname === "/community" && (
+                    <Typography variant="h6" sx={{ fontWeight: "normal" }}>
+                      Follow our&nbsp;
+                      <span
+                        style={{
+                          textDecoration: "underline",
+                          cursor: "pointer",
+                          "&:hover": {
+                            color: theme.palette.GREEN,
+                          },
+                        }}
+                      >
+                        twitter
+                      </span>
+                      &nbsp;to stay up to date.
+                    </Typography>
+                  )}
+
+                  <img
+                    src="https://drive.google.com/uc?id=1DohCwAbJPSmRkOhD9dOiuqqGGG7z1Z74"
+                    data-src="https://drive.google.com/uc?id=1DohCwAbJPSmRkOhD9dOiuqqGGG7z1Z74"
+                    alt=""
+                  />
+                  <Link
+                    target="_blank"
+                    href="https://twitter.com/DeSciWorld"
+                    key="https://twitter.com/DeSciWorld"
+                    color="inherit"
+                    variant="body2"
+                    sx={{
+                      display: "block",
+                    }}
+                  >
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: "normal",
+                        textDecoration: "underline",
+                        "&:hover": {
+                          color: (theme) => theme.palette.GREEN,
+                        },
+                      }}
+                      color={isHome ? "white" : "black"}
+                    >
+                      twitter
+                    </Typography>
+                  </Link>
+                </Stack>
+              </MotionInView>
+            </Stack>
           </Grid>
         </Grid>
-        <Stack
-          spacing={1.5}
-          direction="row"
-          justifyContent={{ xs: "center", md: "center" }}
-          sx={{
-            mt: 2,
-            pb: 5,
-          }}
-        >
-          <Link
-            to={"/"}
-            color="inherit"
-            variant="body2"
-            component={RouterLink}
-            sx={{ display: "block", textAlign: "center" }}
-          >
-            Terms of Service
-          </Link>
-          <Link
-            to={"/"}
-            color="inherit"
-            variant="body2"
-            component={RouterLink}
-            sx={{ display: "block", textAlign: "center" }}
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            to={"/"}
-            color="inherit"
-            variant="body2"
-            component={RouterLink}
-            sx={{ display: "block", textAlign: "center" }}
-          >
-            Terms and Conditions
-          </Link>
-        </Stack>
+
+        <Grid container justifyContent="center">
+          <MotionInView variants={varFadeInUp}>
+            <img
+              width="81.65"
+              height="81.65"
+              src="https://drive.google.com/uc?id=1SIbdWXOhLv-ne6xA_Z7vzxMvqNnthFYV"
+              data-src="https://drive.google.com/uc?id=1SIbdWXOhLv-ne6xA_Z7vzxMvqNnthFYV"
+              alt=""
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            />
+          </MotionInView>
+        </Grid>
       </Container>
     </RootStyle>
   );

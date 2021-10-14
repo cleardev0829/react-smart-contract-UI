@@ -13,10 +13,7 @@ import {
   Grid,
   List,
   Stack,
-  // Popover,
   ListItem,
-  // ListSubheader,
-  // CardActionArea,
   Menu,
 } from "@material-ui/core";
 
@@ -98,11 +95,15 @@ function MenuDesktopItem({
             setAnchorEl(e.currentTarget);
             onOpen(path);
           }}
+          // onMouseOver={(e) => {
+          //   setAnchorEl(e.currentTarget);
+          //   onOpen(path);
+          // }}
           sx={{
             display: "flex",
             cursor: "pointer",
             alignItems: "center",
-            // ...(isHome && { color: 'common.white' }),
+            ...(isHome && { color: "common.primary" }),
             ...(isOffset && { color: "text.primary" }),
             ...(name === path && isOpen && { opacity: 0.48 }),
           }}
@@ -129,11 +130,12 @@ function MenuDesktopItem({
             anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             transformOrigin={{ vertical: "top", horizontal: "center" }}
             onClose={onClose}
+            // onMouseLeave={onClose}
             PaperProps={{
               sx: {
                 px: 3,
                 pt: 2,
-                // pb: 3,
+                pb: 3,
                 margin: "auto",
                 maxWidth: 300,
                 borderRadius: 2,
@@ -189,7 +191,7 @@ function MenuDesktopItem({
       to={path}
       component={RouterLink}
       sx={{
-        // ...(isHome && { color: 'common.white' }),
+        ...(isHome && { color: "common.primary" }),
         ...(isOffset && { color: "text.primary" }),
         ...(isActive && { color: "primary.main" }),
       }}

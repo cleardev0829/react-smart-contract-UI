@@ -208,9 +208,9 @@ export default function RegisterForm() {
                 color: "text.secondary",
               }}
             >
-              Through this form IRekommend collects your name and email. Check
-              out our privacy policy for the full story on how we protect and
-              manage your submitted data.
+              Through this form Demo collects your name and email. Check out our
+              privacy policy for the full story on how we protect and manage
+              your submitted data.
             </Typography>
           </MotionInView>
 
@@ -222,7 +222,7 @@ export default function RegisterForm() {
                   checked={values.remember}
                 />
               }
-              label="Please subscribe me to the IRekommend newsletter"
+              label="Please subscribe me to the Demo newsletter"
             />
           </MotionInView>
 

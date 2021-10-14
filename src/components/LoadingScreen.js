@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { useEffect, useMemo } from "react";
 // material
 import {
-  alpha,
+  // alpha,
   makeStyles,
   experimentalStyled as styled,
 } from "@material-ui/core/styles";
-import { Box } from "@material-ui/core";
+// import { Box } from "@material-ui/core";
 //
-import Logo from "./Logo";
+// import Logo from "./Logo";
 
 // ----------------------------------------------------------------------
 
@@ -68,16 +68,23 @@ export default function LoadingScreen({ ...other }) {
         initial={{ rotateY: 0 }}
         animate={{ rotateY: 360 }}
         transition={{
-          duration: 2,
+          duration: 1,
           ease: "easeInOut",
           repeatDelay: 1,
           repeat: Infinity,
         }}
       >
-        <Logo sx={{ width: 64, height: 64 }} />
+        {/* <Logo sx={{ width: 64, height: 64 }} /> */}
+        <img
+          src="https://drive.google.com/uc?id=1tFzj12G17gtC09o7kPGFzIkknrxNw7Kt"
+          data-src="https://drive.google.com/uc?id=1tFzj12G17gtC09o7kPGFzIkknrxNw7Kt"
+          width={64}
+          height={64}
+          alt=""
+        />
       </motion.div>
 
-      <Box
+      {/* <Box
         component={motion.div}
         animate={{
           scale: [1.2, 1, 1, 1.2, 1.2],
@@ -117,7 +124,7 @@ export default function LoadingScreen({ ...other }) {
           border: (theme) =>
             `solid 8px ${alpha(theme.palette.primary.dark, 0.24)}`,
         }}
-      />
+      /> */}
     </RootStyle>
   );
 }

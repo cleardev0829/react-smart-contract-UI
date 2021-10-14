@@ -1,67 +1,34 @@
-import PropTypes from 'prop-types';
-import { Icon } from '@iconify/react';
-import arrowLeftFill from '@iconify/icons-eva/arrow-left-fill';
-import arrowRightFill from '@iconify/icons-eva/arrow-right-fill';
-// material
-import { useTheme, experimentalStyled as styled } from '@material-ui/core/styles';
-//
-import { MIconButton } from '../../@material-extend';
+import PropTypes from "prop-types";
+import { experimentalStyled as styled } from "@material-ui/core/styles";
+import CircleImage from "src/components/_external-component/CircleImage";
+import { Stack } from "@material-ui/core";
 
-// ----------------------------------------------------------------------
-
-const SIZE = 40;
-
-const RootStyle = styled('div')(({ theme }) => ({
-  top: 0,
-  bottom: 0,
-  zIndex: 9,
-  height: SIZE,
-  width: '100%',
-  margin: 'auto',
-  display: 'flex',
-  position: 'absolute',
-  padding: theme.spacing(0, 2),
-  justifyContent: 'space-between'
+const RootStyle = styled("div")(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
 }));
-
-const ArrowStyle = styled(MIconButton)(({ theme }) => ({
-  width: SIZE,
-  height: SIZE,
-  opacity: 0.48,
-  display: 'flex',
-  cursor: 'pointer',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: theme.palette.common.white,
-  background: theme.palette.grey[900],
-  borderRadius: theme.shape.borderRadiusSm,
-  transition: theme.transitions.create('opacity'),
-  '&:hover': {
-    opacity: 1,
-    background: theme.palette.grey[900]
-  }
-}));
-
-// ----------------------------------------------------------------------
 
 CarouselControlsArrowsBasic2.propTypes = {
   onNext: PropTypes.func,
-  onPrevious: PropTypes.func
+  onPrevious: PropTypes.func,
 };
 
-export default function CarouselControlsArrowsBasic2({ onNext, onPrevious, ...other }) {
-  const theme = useTheme();
-  const isRTL = theme.direction === 'rtl';
-
+export default function CarouselControlsArrowsBasic2({
+  onNext,
+  onPrevious,
+  ...other
+}) {
   return (
     <RootStyle {...other}>
-      <ArrowStyle size="small" onClick={onPrevious}>
-        <Icon width={20} height={20} icon={isRTL ? arrowRightFill : arrowLeftFill} />
-      </ArrowStyle>
+      <Stack direction="row" spacing={2}>
+        <CircleImage onClick={onNext}>
+          <img src="/static/images/arrow-left.svg" alt="feature-arrow-left" />
+        </CircleImage>
 
-      <ArrowStyle size="small" onClick={onNext}>
-        <Icon width={20} height={20} icon={isRTL ? arrowLeftFill : arrowRightFill} />
-      </ArrowStyle>
+        <CircleImage onClick={onPrevious}>
+          <img src="/static/images/arrow-right.svg" alt="feature-arrow-right" />
+        </CircleImage>
+      </Stack>
     </RootStyle>
   );
 }

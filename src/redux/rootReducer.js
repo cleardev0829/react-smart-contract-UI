@@ -1,29 +1,30 @@
-import { combineReducers } from 'redux';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import { combineReducers } from "redux";
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 // slices
-import mailReducer from './slices/mail';
-import chatReducer from './slices/chat';
-import blogReducer from './slices/blog';
-import userReducer from './slices/user';
-import productReducer from './slices/product';
-import calendarReducer from './slices/calendar';
-import kanbanReducer from './slices/kanban';
+import mailReducer from "./slices/mail";
+import chatReducer from "./slices/chat";
+import blogReducer from "./slices/blog";
+import userReducer from "./slices/user";
+import productReducer from "./slices/product";
+import calendarReducer from "./slices/calendar";
+import kanbanReducer from "./slices/kanban";
+import activeReducer from "./slices/active";
 
 // ----------------------------------------------------------------------
 
 const rootPersistConfig = {
-  key: 'root',
+  key: "root",
   storage,
-  keyPrefix: 'redux-',
-  whitelist: []
+  keyPrefix: "redux-",
+  whitelist: [],
 };
 
 const productPersistConfig = {
-  key: 'product',
+  key: "product",
   storage,
-  keyPrefix: 'redux-',
-  whitelist: ['sortBy', 'checkout']
+  keyPrefix: "redux-",
+  whitelist: ["sortBy", "checkout"],
 };
 
 const rootReducer = combineReducers({
@@ -33,7 +34,8 @@ const rootReducer = combineReducers({
   user: userReducer,
   calendar: calendarReducer,
   kanban: kanbanReducer,
-  product: persistReducer(productPersistConfig, productReducer)
+  product: persistReducer(productPersistConfig, productReducer),
+  active: activeReducer,
 });
 
 export { rootPersistConfig, rootReducer };

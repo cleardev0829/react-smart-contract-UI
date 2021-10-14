@@ -47,8 +47,8 @@ import { SettingsProvider } from "./contexts/SettingsContext";
 import LoadingScreen from "./components/LoadingScreen";
 
 // Using for Auth (Check doc https://minimals.cc/docs/authentication)
-// import { AuthProvider } from './contexts/JWTContext';
-import { AuthProvider } from "./contexts/FirebaseContext";
+import { AuthProvider } from "./contexts/JWTContext";
+// import { AuthProvider } from "./contexts/FirebaseContext";
 // import { AuthProvider } from './contexts/AwsCognitoContext';
 // import { AuthProvider } from './contexts/Auth0Context';
 

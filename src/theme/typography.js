@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------------
-// import palette from "./palette";
+import palette from "./palette";
 
 function pxToRem(value) {
   return `${value / 16}rem`;
@@ -19,7 +19,8 @@ function responsiveFontSizes({ sm, md, lg }) {
   };
 }
 
-const FONT_PRIMARY = "Public Sans, sans-serif"; // Google Font
+const FONT_PRIMARY =
+  "Migra,Times New Roman,Times,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif"; // Google Font
 // const FONT_SECONDARY = 'CircularStd, sans-serif'; // Local Font
 
 const typography = {

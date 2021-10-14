@@ -10,7 +10,14 @@ export default function PrivacyPolicyHtml() {
           data-aos-delay="200"
         >
           <div class="content">
-            <Typography variant="h5" color="primary" gutterBottom sx={{ mt: 2 }}>TERMS & CONDITIONS OF SimplyAI LLC</Typography>
+            <Typography
+              variant="h5"
+              color="primary"
+              gutterBottom
+              sx={{ mt: 2 }}
+            >
+              TERMS & CONDITIONS OF SimplyAI LLC
+            </Typography>
             <p>
               These are our terms of service. Please take a moment to review all
               of these terms so you know what you're agreeing to. By clicking on
@@ -18,27 +25,27 @@ export default function PrivacyPolicyHtml() {
               conditions (the “Agreement”).
             </p>
             <p>
-              In this Terms and Conditions, “we”, “us”, “our” or “IRekommend”
-              refers to SimplyAI LLC. located at 6064 Cloverdale, Dr Tega Cay,
-              South Carolina, 29708. "You", "your" or “Customer” means the
-              person or entity using the Subscription Service or receiving the
-              Consulting Services and identified in the applicable account
-              record, billing statement, online subscription process, or Order
-              Form as the customer.
+              In this Terms and Conditions, “we”, “us”, “our” or “Demo” refers
+              to SimplyAI LLC. located at 6064 Cloverdale, Dr Tega Cay, South
+              Carolina, 29708. "You", "your" or “Customer” means the person or
+              entity using the Subscription Service or receiving the Consulting
+              Services and identified in the applicable account record, billing
+              statement, online subscription process, or Order Form as the
+              customer.
             </p>
             <p>
               The Agreement relates to the website, including, but not limited
-              to, the IRekommend product and IRekommend hosted/cloud service
-              (taken together, the Website). The Website is owned and operated
-              by IRekommend. The Website is subject to all of the terms and
-              conditions contained in this Agreement and all other operating
-              rules, policies (including, without limitation, IRekommend privacy
-              policy) and procedures that may be published from time to time on
-              this Site IRekommend.com. We update these terms from time to time.
-              If you have an active IRekommend product or service usage, we will
-              let you know when we update the terms via in-app notification or
-              by email. You can find archived versions of the Master Terms,
-              Product Specific Terms, Jurisdiction Specific Terms & DPA.
+              to, the Demo product and Demo hosted/cloud service (taken
+              together, the Website). The Website is owned and operated by Demo.
+              The Website is subject to all of the terms and conditions
+              contained in this Agreement and all other operating rules,
+              policies (including, without limitation, Demo privacy policy) and
+              procedures that may be published from time to time on this Site
+              Demo.com. We update these terms from time to time. If you have an
+              active Demo product or service usage, we will let you know when we
+              update the terms via in-app notification or by email. You can find
+              archived versions of the Master Terms, Product Specific Terms,
+              Jurisdiction Specific Terms & DPA.
             </p>
             <p>
               The Website is available only to individuals who are at least 18
@@ -49,8 +56,8 @@ export default function PrivacyPolicyHtml() {
               of your Account. You agree to use the Service at your own risk.
             </p>
             <p>
-              This Agreement is a contract that governs your use of the
-              IRekommend services. It consists of the following:
+              This Agreement is a contract that governs your use of the Demo
+              services. It consists of the following:
             </p>
             <ul class="list-group">
               <li>
@@ -69,16 +76,23 @@ export default function PrivacyPolicyHtml() {
               </li>
             </ul>
             <p>
-              Your Order Form is the IRekommend-approved form created following
-              your purchase of one of our products or services through our
-              online payment process or via in-app purchase. It contains all of
-              the details about your purchase, including your term, products &
+              Your Order Form is the Demo-approved form created following your
+              purchase of one of our products or services through our online
+              payment process or via in-app purchase. It contains all of the
+              details about your purchase, including your term, products &
               services purchased and your fees. You’ll find your Order Form(s)
-              in the Documents section of your IRekommend portal. We’ve aimed to
-              keep these documents as readable as possible, but in some cases
-              for legal reasons, some of the language is necessarily “legalese”.{" "}
+              in the Documents section of your Demo portal. We’ve aimed to keep
+              these documents as readable as possible, but in some cases for
+              legal reasons, some of the language is necessarily “legalese”.{" "}
             </p>
-            <Typography variant="h5" color="primary" gutterBottom sx={{ mt: 2 }}>MASTER TERMS</Typography>
+            <Typography
+              variant="h5"
+              color="primary"
+              gutterBottom
+              sx={{ mt: 2 }}
+            >
+              MASTER TERMS
+            </Typography>
             <ul class="list-group">
               <li>
                 DEFINITIONS
@@ -152,34 +166,31 @@ export default function PrivacyPolicyHtml() {
                   </li>
                   <li>
                     "Customer Data" means all information that you submit or
-                    collect via the IRekommend Service. Customer Data does not
-                    include IRekommend Content.{" "}
+                    collect via the Demo Service. Customer Data does not include
+                    Demo Content.{" "}
                   </li>
                   <li>
                     "Customer Materials" means all materials that you provide or
                     post, upload, input or submit for public display through the
                     Service.
                   </li>
-                  <li>
-                    “DPA” means the IRekommend Data Processing Agreement.
-                  </li>
+                  <li>“DPA” means the Demo Data Processing Agreement.</li>
                   <li>
                     “Free Services” means the Service or other products or
                     features we make available to you on an unpaid trial or free
                     basis.
                   </li>
                   <li>
-                    "IRekommend Content" means all information, data, text,
-                    messages, software, sound, music, video, photographs,
-                    graphics, images, and tags that we incorporate into the
-                    Subscription Service or Consulting Services, including
-                    Enrichment Data (as defined in the Product Specific Terms).
+                    "Demo Content" means all information, data, text, messages,
+                    software, sound, music, video, photographs, graphics,
+                    images, and tags that we incorporate into the Subscription
+                    Service or Consulting Services, including Enrichment Data
+                    (as defined in the Product Specific Terms).
                   </li>
                   <li>
-                    "Order" or "Order Form" means the IRekommend-approved form
-                    or online subscription process by which you agree to
-                    subscribe to the Service and purchase IRekommend Consulting
-                    Services.
+                    "Order" or "Order Form" means the Demo-approved form or
+                    online subscription process by which you agree to subscribe
+                    to the Service and purchase Demo Consulting Services.
                   </li>
                   <li>
                     “Personal Data” means any information relating to an
@@ -190,28 +201,28 @@ export default function PrivacyPolicyHtml() {
                     DPA).
                   </li>
                   <li>
-                    “Product and Services Catalog” means IRekommend’s Product
-                    and Services Catalog available at the website.
+                    “Product and Services Catalog” means Demo’s Product and
+                    Services Catalog available at the website.
                   </li>
                   <li>
                     “Product Specific Terms’ means the additional
-                    product-related terms that apply to your use of IRekommend
+                    product-related terms that apply to your use of Demo
                     products, our consulting services and Third party Services.
                     These terms form part of the Agreement and can be found at
                     the website.
                   </li>
                   <li>
-                    "Subscription Fees" means the amount you pay for the
-                    IRekommend Service excluding of all applicable taxes.
+                    "Subscription Fees" means the amount you pay for the Demo
+                    Service excluding of all applicable taxes.
                   </li>
                   <li>
                     "Subscription Service" means all of our web-based
                     applications, tools and platforms that you have subscribed
                     to under an Order Form or that we otherwise make available
                     to you, and are developed, operated, and maintained by us,
-                    accessible via IRekommend.com or another designated URL, and
-                    any ancillary products and services, including website
-                    hosting, that we provide to you.
+                    accessible via Demo.com or another designated URL, and any
+                    ancillary products and services, including website hosting,
+                    that we provide to you.
                   </li>
                   <li>
                     "Subscription Term" means the initial term of your
@@ -226,7 +237,7 @@ export default function PrivacyPolicyHtml() {
                     professional services that are provided by third parties
                     which interoperate with or are used in connection with the
                     Subscription Service. These products and services include
-                    Non-IRekommend apps available.
+                    Non-Demo apps available.
                   </li>
                   <li>
                     "Third-Party Sites" means third-party websites linked to
@@ -264,10 +275,10 @@ export default function PrivacyPolicyHtml() {
                     Additional Features. You may subscribe to additional
                     features of the Subscription Service by placing an
                     additional Order or activating the additional features from
-                    within your IRekommend account (if we make this option
+                    within your Demo account (if we make this option
                     available.). This Agreement will apply to all additional
                     Order(s) and all additional features that you activate from
-                    within your IRekommend account.{" "}
+                    within your Demo account.{" "}
                   </li>
                   <li>
                     Limits. The limits that apply to you will be specified in
@@ -392,8 +403,8 @@ export default function PrivacyPolicyHtml() {
                   </li>
                   <li>
                     Withholding Tax. If you are required to deduct or withhold
-                    tax from payment of your IRekommend invoice, you may deduct
-                    this amount from the applicable Subscription Fee due to the
+                    tax from payment of your Demo invoice, you may deduct this
+                    amount from the applicable Subscription Fee due to the
                     extent it is due and payable as assessed withholding tax
                     required under laws that apply to you (the “Deduction
                     Amount”).
@@ -424,12 +435,12 @@ export default function PrivacyPolicyHtml() {
                     Notice of Non-Renewal. Unless otherwise specified in your
                     Order, to prevent renewal of your subscription, you or we
                     must give written notice of non-renewal. The deadline for
-                    sending this notice varies depending on the IRekommend
-                    product and edition you have subscribed to. For more
-                    information on non-renewal notice periods, please see the
-                    Product Specific Terms. If you decide not to renew, you may
-                    send this non-renewal notice to us by indicating that you do
-                    not want to renew.
+                    sending this notice varies depending on the Demo product and
+                    edition you have subscribed to. For more information on
+                    non-renewal notice periods, please see the Product Specific
+                    Terms. If you decide not to renew, you may send this
+                    non-renewal notice to us by indicating that you do not want
+                    to renew.
                   </li>
                   <li>
                     Early Cancellation. You may choose to cancel your
@@ -460,8 +471,8 @@ export default function PrivacyPolicyHtml() {
                     Services without notice for: (i) use of the Subscription
                     Service in a way that violates applicable local, state,
                     federal, or foreign laws or regulations or the terms of this
-                    Agreement, (ii) use of the IRekommend email send service
-                    that results in excessive hard bounces, SPAM complaints via
+                    Agreement, (ii) use of the Demo email send service that
+                    results in excessive hard bounces, SPAM complaints via
                     feedback loops, direct spam complaints (to our abuse desk),
                     or requests for removal from a mailing list by recipients,
                     or (iii) repeated instances of posting or uploading material
@@ -508,13 +519,13 @@ export default function PrivacyPolicyHtml() {
                   <li>
                     Effect of Termination or Expiration. Upon termination or
                     expiration of this Agreement, you will stop all use of the
-                    Subscription Service and IRekommend Content. If you
-                    terminate this Agreement for cause of material breach, we
-                    will promptly refund any prepaid but unused fees covering
-                    use of the Subscription Service after termination. If we
-                    terminate this Agreement for cause of material breach, you
-                    will promptly pay all unpaid fees due through the end of the
-                    Subscription Term. Fees which are otherwise non-refundable.
+                    Subscription Service and Demo Content. If you terminate this
+                    Agreement for cause of material breach, we will promptly
+                    refund any prepaid but unused fees covering use of the
+                    Subscription Service after termination. If we terminate this
+                    Agreement for cause of material breach, you will promptly
+                    pay all unpaid fees due through the end of the Subscription
+                    Term. Fees which are otherwise non-refundable.
                   </li>
                 </ul>
               </li>
@@ -567,9 +578,9 @@ export default function PrivacyPolicyHtml() {
                     Subscription Service, or the Consulting Services in whole or
                     in part, by any means, except as expressly authorized in
                     writing by us. Our trademarks include, but aren’t limited
-                    to, those listed at IRekommend website (which we may update
-                    at any time without notice to you) and you may not use any
-                    of these without our prior written permission.
+                    to, those listed at Demo website (which we may update at any
+                    time without notice to you) and you may not use any of these
+                    without our prior written permission.
                   </li>
                 </ul>
               </li>
@@ -815,39 +826,53 @@ export default function PrivacyPolicyHtml() {
                 JURISDICTION
                 <ul class="list-group">
                   <li>
-                    This Agreement constitutes the entire agreement between
-                    IRekommend and you concerning the subject matter hereof, and
-                    they may only be modified by a written amendment signed by
-                    an authorized executive of IRekommend, or by the posting by
-                    IRekommend of a revised version. The Agreement and these
-                    Conditions shall be governed by and construed in accordance
-                    with the applicable laws of United States & by the laws of
-                    the state of South Carolina. Unless any alternative dispute
-                    resolution procedure is agreed between the parties, the
-                    parties agree to submit to the exclusive jurisdiction of the
-                    Federal Courts in South Carolina & laws of United states in
-                    respect of any dispute which arises out of or under this
-                    Agreement. The prevailing party in any action or proceeding
-                    to enforce this Agreement shall be entitled to costs and
-                    attorneys' fees. If any part of this Agreement is held
-                    invalid or unenforceable, that part will be construed to
-                    reflect the parties' original intent, and the remaining
-                    portions will remain in full force and effect. A waiver by
-                    either party of any term or condition of this Agreement or
-                    any breach thereof, in any one instance, will not waive such
-                    term or condition or any subsequent breach thereof. You may
-                    assign your rights under this Agreement to any party that
-                    consents to, and agrees to be bound by, its terms and
-                    conditions; IRekommend may assign its rights under this
-                    Agreement without condition. This Agreement will be binding
-                    upon and will inure to the benefit of the parties, their
-                    successors and permitted assigns.
+                    This Agreement constitutes the entire agreement between Demo
+                    and you concerning the subject matter hereof, and they may
+                    only be modified by a written amendment signed by an
+                    authorized executive of Demo, or by the posting by Demo of a
+                    revised version. The Agreement and these Conditions shall be
+                    governed by and construed in accordance with the applicable
+                    laws of United States & by the laws of the state of South
+                    Carolina. Unless any alternative dispute resolution
+                    procedure is agreed between the parties, the parties agree
+                    to submit to the exclusive jurisdiction of the Federal
+                    Courts in South Carolina & laws of United states in respect
+                    of any dispute which arises out of or under this Agreement.
+                    The prevailing party in any action or proceeding to enforce
+                    this Agreement shall be entitled to costs and attorneys'
+                    fees. If any part of this Agreement is held invalid or
+                    unenforceable, that part will be construed to reflect the
+                    parties' original intent, and the remaining portions will
+                    remain in full force and effect. A waiver by either party of
+                    any term or condition of this Agreement or any breach
+                    thereof, in any one instance, will not waive such term or
+                    condition or any subsequent breach thereof. You may assign
+                    your rights under this Agreement to any party that consents
+                    to, and agrees to be bound by, its terms and conditions;
+                    Demo may assign its rights under this Agreement without
+                    condition. This Agreement will be binding upon and will
+                    inure to the benefit of the parties, their successors and
+                    permitted assigns.
                   </li>
                 </ul>
               </li>
             </ul>
-            <Typography variant="h5" color="primary" gutterBottom sx={{ mt: 2 }}>IREKOMMEND DATA PROCESSING AGREEMENT (DPA)</Typography>
-            <Typography variant="h5" color="primary" gutterBottom sx={{ mt: 2 }}>CUSTOMER RESPONSIBILITIES </Typography>
+            <Typography
+              variant="h5"
+              color="primary"
+              gutterBottom
+              sx={{ mt: 2 }}
+            >
+              IREKOMMEND DATA PROCESSING AGREEMENT (DPA)
+            </Typography>
+            <Typography
+              variant="h5"
+              color="primary"
+              gutterBottom
+              sx={{ mt: 2 }}
+            >
+              CUSTOMER RESPONSIBILITIES{" "}
+            </Typography>
             <p>
               Compliance with Laws. Within the scope of the Agreement and in its
               use of the services, you will be responsible for complying with
@@ -883,7 +908,14 @@ export default function PrivacyPolicyHtml() {
               the Instructions shall require prior written agreement between us
               and you.
             </p>
-            <Typography variant="h5" color="primary" gutterBottom sx={{ mt: 2 }}>IREKOMMEND OBLIGATIONS </Typography>
+            <Typography
+              variant="h5"
+              color="primary"
+              gutterBottom
+              sx={{ mt: 2 }}
+            >
+              IREKOMMEND OBLIGATIONS{" "}
+            </Typography>
             <p>
               Compliance with Instructions. We will only Process Personal Data
               for the purposes described in this DPA or as otherwise agreed
@@ -952,18 +984,31 @@ export default function PrivacyPolicyHtml() {
               We will remain responsible for each Sub-Processor’s compliance
               with the obligations of this DPA.
             </p>
-            <Typography variant="h5" color="primary" gutterBottom sx={{ mt: 2 }}>Data Transfers </Typography>
+            <Typography
+              variant="h5"
+              color="primary"
+              gutterBottom
+              sx={{ mt: 2 }}
+            >
+              Data Transfers{" "}
+            </Typography>
             <p>
               You acknowledge and agree that we may access and Process Personal
               Data on a global basis as necessary to provide the Subscription
               Service in accordance with the Agreement, and in particular that
-              Personal Data will be transferred to and Processed by IRekommend.
-              in India & US and to other jurisdictions where IRekommend
-              Affiliates and Sub-Processors have operations. We will ensure such
-              transfers are made in compliance with the requirements of Data
-              Protection Laws.
+              Personal Data will be transferred to and Processed by Demo. in
+              India & US and to other jurisdictions where Demo Affiliates and
+              Sub-Processors have operations. We will ensure such transfers are
+              made in compliance with the requirements of Data Protection Laws.
             </p>
-            <Typography variant="h5" color="primary" gutterBottom sx={{ mt: 2 }}>PARTIES TO THIS DPA </Typography>
+            <Typography
+              variant="h5"
+              color="primary"
+              gutterBottom
+              sx={{ mt: 2 }}
+            >
+              PARTIES TO THIS DPA{" "}
+            </Typography>
             <p>
               Permitted Affiliates. By accepting this Agreement, you enter into
               this DPA on behalf of yourself and, to the extent required under

@@ -80,7 +80,7 @@ export default function DemoContent(props) {
             <ContentStyle>
               <MotionInView variants={varFadeInUp}>
                 <Typography variant="h3">
-                  IRekommend provides knowledge to everyone
+                  Demo provides knowledge to everyone
                 </Typography>
                 <MHidden width="mdDown">
                   <Divider color="primary" sx={{ width: 70, my: 4 }} />
