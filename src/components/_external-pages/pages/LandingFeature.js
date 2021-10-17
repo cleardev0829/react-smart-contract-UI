@@ -7,15 +7,20 @@ import {
 import { Box, Grid, Container, Stack, Typography } from "@material-ui/core";
 import { varFadeIn, varFadeInUp, MotionInView } from "../../animate";
 import { CarouselControlsArrowsBasic2 } from "../../carousel";
+import { MHidden } from "../../../components/@material-extend";
 
 const RootStyle = styled("div")(({ theme }) => ({
-  padding: theme.spacing(24, 0),
+  padding: theme.spacing(8, 0),
+  // backgroundColor: "green",
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(4, 0),
+  },
 }));
 
 const ContentStyle = styled("div")(({ theme }) => ({
   width: "100%",
   textAlign: "center",
-  marginBottom: theme.spacing(10),
+  marginBottom: theme.spacing(0),
   [theme.breakpoints.up("md")]: {
     textAlign: "left",
     marginBottom: 0,
@@ -36,7 +41,7 @@ export default function LandingHugePackElements() {
     speed: 500,
     slidesToShow: 5,
     centerMode: true,
-    centerPadding: "0 80px",
+    centerPadding: "0 40px",
     rtl: Boolean(theme.direction === "rtl"),
     responsive: [
       {
@@ -74,19 +79,31 @@ export default function LandingHugePackElements() {
           >
             <ContentStyle>
               <MotionInView variants={varFadeInUp}>
-                <Stack direction="row" spacing={5} justifyContent="center">
+                <Stack direction="row" spacing={4} justifyContent="center">
                   <img
                     src="/static/images/teardrop.svg"
                     alt="feature-teardrop"
                   />
-                  <Typography variant="h1">
-                    <span style={{ fontSize: 125 }}>Featured Vamps</span>
-                  </Typography>
-                  <CarouselControlsArrowsBasic2
-                    onNext={handleNext}
-                    onPrevious={handlePrevious}
-                    sx={{ transform: "translateY(-64px)" }}
-                  />
+                  <Stack direction="row" spacing={4}>
+                    <Typography
+                      variant="h1"
+                      sx={{
+                        [theme.breakpoints.up("xs")]: { fontSize: 64 },
+                        [theme.breakpoints.up("sm")]: { fontSize: 64 },
+                        [theme.breakpoints.up("md")]: { fontSize: 98 },
+                        [theme.breakpoints.up("lg")]: { fontSize: 125 },
+                      }}
+                    >
+                      Featured Vamps
+                    </Typography>
+
+                    <MHidden width="smDown">
+                      <CarouselControlsArrowsBasic2
+                        onNext={handleNext}
+                        onPrevious={handlePrevious}
+                      />
+                    </MHidden>
+                  </Stack>
                 </Stack>
               </MotionInView>
             </ContentStyle>
@@ -98,7 +115,7 @@ export default function LandingHugePackElements() {
           <Slider ref={carouselRef} {...settings}>
             {IMAGES.map((img, index) => (
               <MotionInView key={`motion-${index}`} variants={varFadeIn}>
-                <Box key={`box-img-${index}`} sx={{ px: 4 }}>
+                <Box key={`box-img-${index}`} sx={{ px: 1 }}>
                   <Box
                     key={`img-${index}`}
                     component="img"
@@ -110,6 +127,19 @@ export default function LandingHugePackElements() {
             ))}
           </Slider>
         </Box>
+      </MotionInView>
+      <MotionInView variants={varFadeInUp}>
+        <MHidden width="smUp">
+          <CarouselControlsArrowsBasic2
+            onNext={handleNext}
+            onPrevious={handlePrevious}
+            sx={{
+              [theme.breakpoints.down("sm")]: {
+                transform: "none",
+              },
+            }}
+          />
+        </MHidden>
       </MotionInView>
     </RootStyle>
   );

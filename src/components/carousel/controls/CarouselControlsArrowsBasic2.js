@@ -3,10 +3,7 @@ import { experimentalStyled as styled } from "@material-ui/core/styles";
 import CircleImage from "src/components/_external-component/CircleImage";
 import { Stack } from "@material-ui/core";
 
-const RootStyle = styled("div")(({ theme }) => ({
-  display: "flex",
-  justifyContent: "space-between",
-}));
+const RootStyle = styled("div")(({ theme }) => ({}));
 
 CarouselControlsArrowsBasic2.propTypes = {
   onNext: PropTypes.func,
@@ -20,7 +17,12 @@ export default function CarouselControlsArrowsBasic2({
 }) {
   return (
     <RootStyle {...other}>
-      <Stack direction="row" spacing={2}>
+      <Stack
+        direction="row"
+        justifyContent="center"
+        spacing={2}
+        sx={{ width: "100%" }}
+      >
         <CircleImage onClick={onNext}>
           <img src="/static/images/arrow-left.svg" alt="feature-arrow-left" />
         </CircleImage>

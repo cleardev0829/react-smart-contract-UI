@@ -14,36 +14,24 @@ import { varFadeInUp, MotionInView } from "../../animate";
 import CircleImage from "src/components/_external-component/CircleImage";
 
 const RootStyle = styled("div")(({ theme }) => ({
-  paddingBottom: theme.spacing(12),
+  padding: theme.spacing(8, 0),
+  // backgroundColor: "gray",
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(4, 0),
+  },
 }));
 
 const ContentStyle = styled("div")(({ theme }) => ({
   width: "100%",
-  textAlign: "center",
-  marginBottom: theme.spacing(10),
+  textAlign: "left",
+  marginBottom: theme.spacing(0),
   [theme.breakpoints.up("md")]: {
     textAlign: "left",
     marginBottom: 0,
   },
 }));
 
-const LogoImgStyle = styled("img")(({ theme }) => ({
-  // maxWidth: 160,
-  // borderRadius: 8,
-  // backgroundColor:
-  //   theme.palette.grey[theme.palette.mode === "light" ? 300 : 800],
-  // [theme.breakpoints.up("sm")]: {
-  //   maxWidth: 320,
-  //   paddingRight: 4,
-  //   borderRadius: 12,
-  // },
-  // "& img": {
-  //   borderRadius: 8,
-  //   [theme.breakpoints.up("sm")]: {
-  //     borderRadius: 12,
-  //   },
-  // },
-}));
+const LogoImgStyle = styled("img")(({ theme }) => ({}));
 
 export default function LandingAbout() {
   const theme = useTheme();
@@ -51,7 +39,7 @@ export default function LandingAbout() {
   return (
     <RootStyle>
       <Container maxWidth="xlg">
-        <Grid container spacing={12} justifyContent="center" sx={{ mb: 5 }}>
+        <Grid container spacing={0} sx={{ mb: 4 }}>
           <Grid item xs={12} md={6}>
             <Box
               sx={{
@@ -67,12 +55,7 @@ export default function LandingAbout() {
               />
             </Box>
           </Grid>
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{ display: "flex", alignItems: "center" }}
-          >
+          <Grid item xs={12} md={6}>
             <ContentStyle>
               <MotionInView variants={varFadeInUp}>
                 <Typography variant="h1">
@@ -113,7 +96,12 @@ export default function LandingAbout() {
           </Grid>
         </Grid>
 
-        <Grid container spacing={12} justifyContent="center" sx={{ mb: 5 }}>
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          sx={{ mb: 5 }}
+        >
           <Grid item xs={12} md={6}>
             <Button target="_blank" href="https://twitter.com/SVSNFT">
               <Stack
@@ -124,7 +112,7 @@ export default function LandingAbout() {
                   lg: "row",
                 }}
                 spacing={3}
-                alignItems="center"
+                alignItems="space-between"
               >
                 <CircleImage>
                   <img
@@ -171,7 +159,7 @@ export default function LandingAbout() {
           </Grid>
         </Grid>
 
-        <Grid container spacing={12} justifyContent="center">
+        <Grid container justifyContent="flex-start" alignItems="center">
           <Grid item xs={12} md={6}>
             <Button target="_blank" href="https://twitter.com/SVSNFT">
               <Stack
@@ -182,7 +170,7 @@ export default function LandingAbout() {
                   lg: "row",
                 }}
                 spacing={3}
-                alignItems="center"
+                alignItems="space-between"
               >
                 <CircleImage>
                   <img

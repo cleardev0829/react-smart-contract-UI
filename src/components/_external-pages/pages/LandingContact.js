@@ -15,13 +15,17 @@ import {
 import { varFadeInUp, MotionInView } from "../../animate";
 
 const RootStyle = styled("div")(({ theme }) => ({
-  paddingBottom: theme.spacing(12),
+  padding: theme.spacing(12, 0),
+  // backgroundColor: "green",
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(4, 0),
+  },
 }));
 
 const ContentStyle = styled("div")(({ theme }) => ({
   width: "100%",
   textAlign: "center",
-  marginBottom: theme.spacing(10),
+  marginBottom: theme.spacing(0),
   [theme.breakpoints.up("md")]: {
     textAlign: "left",
     marginBottom: 0,
@@ -43,10 +47,17 @@ export default function LandingContact() {
           >
             <ContentStyle>
               <MotionInView variants={varFadeInUp}>
-                <Typography variant="h1">
+                <Typography
+                  variant="h1"
+                  sx={{
+                    [theme.breakpoints.up("xs")]: { fontSize: 72 },
+                    [theme.breakpoints.up("sm")]: { fontSize: 72 },
+                    [theme.breakpoints.up("md")]: { fontSize: 98 },
+                    [theme.breakpoints.up("lg")]: { fontSize: 113 },
+                  }}
+                >
                   <span
                     style={{
-                      fontSize: 113,
                       fontWeight: 800,
                     }}
                   >
@@ -56,7 +67,6 @@ export default function LandingContact() {
                   <span
                     style={{
                       color: theme.palette.primary.main,
-                      fontSize: 113,
                       fontWeight: 800,
                     }}
                   >

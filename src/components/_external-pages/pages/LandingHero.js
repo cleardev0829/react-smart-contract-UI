@@ -18,12 +18,15 @@ import CircleImage from "../../_external-component/CircleImage";
 const RootStyle = styled(motion.div)(({ theme }) => ({
   position: "relative",
   backgroundColor: theme.palette.background.body,
+  // backgroundColor: "gray",
+  paddingBottom: theme.spacing(4),
   [theme.breakpoints.up("md")]: {
     top: 0,
     left: 0,
     width: "100%",
     display: "flex",
     alignItems: "center",
+    paddingBottom: theme.spacing(8),
   },
 }));
 
@@ -39,14 +42,6 @@ const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(
     },
   })
 );
-
-const HeroOverlayStyle = styled(motion.img)({
-  zIndex: 9,
-  width: "100%",
-  height: "100%",
-  objectFit: "cover",
-  position: "absolute",
-});
 
 const HeroBookmarkImgStyle = styled(motion.img)(({ theme }) => ({
   maxWidth: 135,
@@ -83,7 +78,7 @@ export default function LandingHero() {
   return (
     <RootStyle initial="initial" animate="animate" variants={varWrapEnter}>
       <Container maxWidth="xlg">
-        <Grid container spacing={10} justify="center" alignItems="center">
+        <Grid container spacing={8} justify="center" alignItems="center">
           <Grid item xs={12} sm={12}>
             <ContentStyle>
               <motion.div variants={varFadeInRight}>
@@ -124,11 +119,7 @@ export default function LandingHero() {
                 </Link>
               </Stack>
 
-              <Stack
-                direction="row"
-                justifyContent="center"
-                spacing={{ xs: 5, lg: 10 }}
-              >
+              <Stack direction="row" justifyContent="center">
                 <Button target="_blank" href="https://twitter.com/SVSNFT">
                   <Stack
                     direction={{

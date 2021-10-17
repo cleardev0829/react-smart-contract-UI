@@ -49,22 +49,12 @@ export default function Router() {
     {
       path: "/",
       element: <MainLayout />,
-      children: [
-        { path: "/", element: <HomePage /> },
-        { path: "nft", element: <NFTPage /> },
-        { path: "community", element: <CommunityPage /> },
-        { path: "documentation", element: <DocumentationPage /> },
-      ],
+      children: [{ path: "/", element: <HomePage /> }],
     },
     { path: "*", element: <Navigate to="/404" replace /> },
   ]);
 }
 
 const HomePage = Loadable(lazy(() => import("../pages/Home")));
-const NFTPage = Loadable(lazy(() => import("../pages/NFT")));
-const CommunityPage = Loadable(lazy(() => import("../pages/Community")));
-const DocumentationPage = Loadable(
-  lazy(() => import("../pages/Documentation"))
-);
 const Page500 = Loadable(lazy(() => import("../pages/Page500")));
 const NotFound = Loadable(lazy(() => import("../pages/Page404")));

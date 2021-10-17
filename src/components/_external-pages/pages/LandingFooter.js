@@ -7,17 +7,17 @@ import {
   Grid,
   Container,
   Typography,
-  Button,
   Stack,
-  Input,
-  TextField,
   Divider,
 } from "@material-ui/core";
 import { varFadeInUp, MotionInView } from "../../animate";
-import CircleImage from "src/components/_external-component/CircleImage";
 
 const RootStyle = styled("div")(({ theme }) => ({
-  paddingBottom: theme.spacing(12),
+  padding: theme.spacing(4, 0),
+  // backgroundColor: "green",
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(8, 0),
+  },
 }));
 
 const ContentStyle = styled("div")(({ theme }) => ({
@@ -44,6 +44,7 @@ export default function LandingFooter() {
             sx={{ display: "flex", alignItems: "center" }}
           >
             <Stack
+              width="100%"
               direction="column"
               alignItems="center"
               style={{ position: "relative" }}
@@ -61,9 +62,18 @@ export default function LandingFooter() {
           </Grid>
           <Grid item xs={12} md={7}>
             <ContentStyle>
-              <Grid container>
+              <Grid container spacing={8}>
                 <Grid item xs={12} md={6}>
-                  <Stack direction="column" alignItems="left" spacing={2}>
+                  <Stack
+                    direction="column"
+                    alignItems={{
+                      xs: "center",
+                      sm: "center",
+                      md: "flex-start",
+                      lg: "flex-start",
+                    }}
+                    spacing={2}
+                  >
                     <MotionInView variants={varFadeInUp}>
                       <Typography variant="h3">Quick Links</Typography>
                     </MotionInView>
@@ -92,7 +102,16 @@ export default function LandingFooter() {
                   </Stack>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Stack direction="column" alignItems="left" spacing={2}>
+                  <Stack
+                    direction="column"
+                    alignItems={{
+                      xs: "center",
+                      sm: "center",
+                      md: "flex-start",
+                      lg: "flex-start",
+                    }}
+                    spacing={2}
+                  >
                     <MotionInView variants={varFadeInUp}>
                       <Typography variant="h3">Jump to</Typography>
                     </MotionInView>

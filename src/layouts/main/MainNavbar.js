@@ -6,9 +6,11 @@ import useOffSetTop from "../../hooks/useOffSetTop";
 import Logo from "../../components/Logo";
 import { MHidden } from "../../components/@material-extend";
 import navConfig from "./MenuConfig";
-import VerticalMenuDesktop, { LinkStyle } from "./VerticalMenuDesktop";
+import { LinkStyle } from "./VerticalMenuDesktop";
 import { varFadeInUp, MotionInView } from "../../components/animate";
 import { useSelector } from "react-redux";
+import MenuDesktop from "./MenuDesktop";
+import MenuMobile from "./MenuMobile";
 
 export default function MainNavbar() {
   const isOffset = useOffSetTop(100);
@@ -32,11 +34,7 @@ export default function MainNavbar() {
             <Grid item xs="12" md="6">
               <RouterLink to="/">
                 <MotionInView variants={varFadeInUp}>
-                  <Logo
-                  // sx={{
-                  //   boxShadow: (theme) => theme.customShadows.z24,
-                  // }}
-                  />
+                  <Logo />
                 </MotionInView>
               </RouterLink>
             </Grid>
@@ -48,14 +46,14 @@ export default function MainNavbar() {
               sx={{ display: "flex", justifyContent: "flex-end" }}
             >
               <MHidden width="mdDown">
-                <VerticalMenuDesktop
+                <MenuDesktop
                   isOffset={isOffset}
                   isHome={isHome}
                   navConfig={navConfig}
                 />
               </MHidden>
               <MHidden width="mdUp">
-                <VerticalMenuDesktop
+                <MenuMobile
                   isOffset={isOffset}
                   isHome={isHome}
                   navConfig={navConfig}

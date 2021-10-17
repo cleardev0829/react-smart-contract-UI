@@ -1,32 +1,19 @@
-import {
-  useTheme,
-  experimentalStyled as styled,
-} from "@material-ui/core/styles";
+import { experimentalStyled as styled } from "@material-ui/core/styles";
 import {
   Box,
   Grid,
   Container,
   Typography,
-  Button,
   Stack,
-  Input,
-  TextField,
-  Divider,
+  useTheme,
 } from "@material-ui/core";
 import { varFadeInUp, MotionInView } from "../../animate";
-import CircleImage from "src/components/_external-component/CircleImage";
 
 const RootStyle = styled("div")(({ theme }) => ({
-  paddingBottom: theme.spacing(24),
-}));
-
-const ContentStyle = styled("div")(({ theme }) => ({
-  width: "100%",
-  textAlign: "center",
-  marginBottom: theme.spacing(10),
-  [theme.breakpoints.up("md")]: {
-    textAlign: "left",
-    marginBottom: 0,
+  padding: theme.spacing(12, 0),
+  // backgroundColor: "green",
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(8, 0),
   },
 }));
 
@@ -53,6 +40,7 @@ const Founder = ({ img, name, role, social }) => {
         <img
           src={img}
           height="130px"
+          alt={name}
           style={{
             borderRadius: "50%",
           }}
@@ -76,12 +64,18 @@ export default function LandingFounders() {
         <Grid
           container
           justifyContent="center"
-          sx={{ position: "relative", mb: 15 }}
+          textAlign="center"
+          sx={{
+            position: "relative",
+
+            [theme.breakpoints.up("xs")]: { fontSize: 72, mb: 20 },
+            [theme.breakpoints.up("sm")]: { fontSize: 72, mb: 20 },
+            [theme.breakpoints.up("md")]: { fontSize: 98, mb: 20 },
+            [theme.breakpoints.up("lg")]: { fontSize: 124, mb: 20 },
+          }}
         >
           <Typography variant="h1">
-            <span style={{ fontSize: 124, fontWeight: 800 }}>
-              Syndicate Founders
-            </span>
+            <span style={{ fontWeight: 800 }}>Syndicate Founders</span>
           </Typography>
           <Box
             component="img"
